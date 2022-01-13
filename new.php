@@ -176,7 +176,7 @@ $contacts = [
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top">
       <div class="container">
-        <a class="navbar-brand text-white " href="#">Site Title</a>
+        <a class="navbar-brand text-white " href="/"><h1>August Technologies</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <!-- <span class="navbar-toggler-icon"></span> -->
           <i class="bi bi-justify text-white display-6"></i>
@@ -191,20 +191,18 @@ $contacts = [
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown link
+              <a class="nav-link dropdown-toggle text-white" href="#services" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
               </a>
               <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                <li><a class="dropdown-item text-white" href="#">Another
-                    action</a></li>
-                <li><a class="dropdown-item text-white" href="#">Something else
-                    here</a></li>
+              <?php foreach($sections as $s): ?>
+                <li><a class="dropdown-item text-white" href="#<?=$s['id'];?>"><?=$s['title'];?></a></li>
+              <?php endforeach;?>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Pricing</a>
+              <a class="nav-link text-white" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -260,9 +258,7 @@ $contacts = [
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 padding-none bg-secondary">
 
-        <?php
-        foreach($features as $f) :
-        ?>
+        <?php foreach($features as $f) :?>
           <div class="card mb-3 bg-secondary border-0">
             <div class="row g-0">
               <div class="col-md-2 p-3 text-center ">
@@ -309,9 +305,9 @@ $contacts = [
 
   <section id="contact" class="container-fluid">
     <div class="row">
-      <div class="col bg-white text-dark p-3">
+      <div class="col bg-secondary text-white p-3">
         <h5 class="ps-3">We're a friendly bunch..</h5>
-        <p  class="text-justify text-secondary ps-3">We create projects for companies and startups with a passion for quality</p>
+        <p  class="text-justify text-white ps-3">We create projects for companies and startups with a passion for quality</p>
       </div>
       <div class="col p-3">
         <h5 class="ps-3">CONTACT US</h5>
@@ -325,16 +321,16 @@ $contacts = [
 
   </section>
 
-  <footer class="container py-2">
-    <div class="row justify-content-end">
+  <footer class="container-fluid py-2 bg-white">
+    <div class="row container justify-content-end">
       <div class="col-auto">
         <div class="list-group list-group-horizontal">
         <?php foreach($links as $l): ?>
-          <a href="<?=$l['href'];?>"  class="list-group-item bg-dark text-white"><i class="bi <?=$l['icon'];?>"></i></a>
+          <a href="<?=$l['href'];?>"  class="list-group-item border-0"><i class="bi <?=$l['icon'];?>"></i></a>
         <?php endforeach;?>
         </div>
       </div>
-      <div class="col-auto align-self-center">
+      <div class="col-auto align-self-center text-dark">
         © <?=date('Y');?> August Technologies Limited. All Rights Reserved.
       </div>
     </div>

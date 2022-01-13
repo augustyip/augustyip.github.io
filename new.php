@@ -135,11 +135,15 @@ $links = [
     'icon' => 'bi-github',
     'href' => '#',
   ],
+  [
+    'icon' => 'bi-instagram',
+    'href' => '#',
+  ],
 ];
 
 $contacts = [
   [
-    'icon' => 'bi-pin-map',
+    'icon' => 'bi-geo-alt',
     'href' => '#',
     'text' => 'Room 1905 Nan Fung Centre, 264-298 Castle Peak Road, Tsuen Wan, N.T., Hong Kong',
   ],
@@ -151,6 +155,11 @@ $contacts = [
   [
     'icon' => 'bi-telephone',
     'href' => 'tel:+85294946701',
+    'text' => '+852 9494 6701',
+  ],
+  [
+    'icon' => 'bi-whatsapp',
+    'href' => 'https://api.whatsapp.com/send?phone=85294946701',
     'text' => '+852 9494 6701',
   ],
 ];
@@ -167,42 +176,41 @@ $contacts = [
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <title>Hello, world!</title>
+  <title>August Technologies - Cloud Solution for Your Business</title>
 </head>
 
-<body class="text-white bg-dark">
-  <!-- Header Area wrapper Starts -->
-  <header id="header-wrap">
+<body class="text-white bg-dark position-relative">
+
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container">
-        <a class="navbar-brand text-white " href="/"><h1>August Technologies</h1></a>
+        <a class="navbar-brand " href="/"><h1>August Technologies</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <!-- <span class="navbar-toggler-icon"></span> -->
-          <i class="bi bi-justify text-white display-6"></i>
+          <i class="bi bi-justify display-6"></i>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#feature">Features</a>
+              <a class="nav-link" href="#feature">Features</a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#services" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle " href="#services" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
-              <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+              <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
               <?php foreach($sections as $s): ?>
-                <li><a class="dropdown-item text-white" href="#<?=$s['id'];?>"><?=$s['title'];?></a></li>
+                <li><a class="dropdown-item " href="#<?=$s['id'];?>"><?=$s['title'];?></a></li>
               <?php endforeach;?>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-white" href="#contact">Contact</a>
+              <a class="nav-link " href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -240,7 +248,6 @@ $contacts = [
     </div>
     <!-- Hero Area End -->
 
-  </header>
   <!-- Header Area wrapper End -->
   <!-- Feature Section Start -->
   <section id="feature" class="">
@@ -313,7 +320,7 @@ $contacts = [
         <h5 class="ps-3">CONTACT US</h5>
         <div class="list-group">
         <?php foreach($contacts as $c): ?>
-          <a href="<?=$c['href'];?>" class="list-group-item bg-dark text-white d-flex align-items-center" ><i class="bi <?=$c['icon'];?> me-3 fs-4"></i><?=$c['text'];?></a>
+          <a href="<?=$c['href'];?>" class="list-group-item border-0 bg-dark text-white d-flex align-items-center" ><i class="bi <?=$c['icon'];?> me-3 fs-4"></i><?=$c['text'];?></a>
         <?php endforeach;?>
         </div>
       </div>
@@ -326,7 +333,7 @@ $contacts = [
       <div class="col-auto">
         <div class="list-group list-group-horizontal">
         <?php foreach($links as $l): ?>
-          <a href="<?=$l['href'];?>"  class="list-group-item border-0"><i class="bi <?=$l['icon'];?>"></i></a>
+          <a href="<?=$l['href'];?>"  class="list-group-item border-0"><i class="bi <?=$l['icon'];?> fs-3"></i></a>
         <?php endforeach;?>
         </div>
       </div>
@@ -335,6 +342,11 @@ $contacts = [
       </div>
     </div>
   </footer>
+
+  <!-- Back to top button -->
+<button type="button" class="btn btn-danger btn-lg position-fixed bottom-0 end-0  " id="btn-back-to-top">
+  <i class="bi bi-arrow-up-circle"></i>
+</button>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

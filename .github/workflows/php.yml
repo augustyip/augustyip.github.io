@@ -17,16 +17,13 @@ jobs:
     - name: Execute source file to html
       run: php -f source.php > index.html
 
-    - name: check for changes
-      run: git status
-    - name: stage changed files
-      run: git add .
-    - name: commit changed files
-      run: git commit -m "Auto update index.html by github workflow"
-    - name: fetch from master
-      run: git fetch origin master
-    - name: push code to master
-      run: git push origin HEAD:master
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: August Yip
+        author_email: augustyip@gmail.com
+        message: 'Auto update index.html by github workflow'
+        add: 'index.html'
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md

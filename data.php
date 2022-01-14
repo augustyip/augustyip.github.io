@@ -2,7 +2,7 @@
 
 return [
 
-  'name' => 'August Technologies',
+  'name' => 'August Technologies xx',
   'sections' => [
     [
       'id' => 'services',

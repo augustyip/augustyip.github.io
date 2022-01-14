@@ -1,0 +1,3 @@
+# Ignore vendor dependencies and scripts
+/vendor
+/compilation_cache

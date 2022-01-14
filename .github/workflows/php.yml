@@ -14,12 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Start the php server at port 8080
-      run: php -S 127.0.0.1:8080
-
-    - name: Curl save the output file out.html
-      run: curl http://127.0.0.1:8080/source.php -o index.html
-
+    - name: Execute source file to html
+      run: php -f source.php > index.html
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md

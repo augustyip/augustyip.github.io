@@ -18,7 +18,7 @@ jobs:
       run: php -S 127.0.0.1:8080
 
     - name: Curl save the output file out.html
-      run: curl -K http://127.0.0.1:8080/new.php -o out.html
+      run: curl http://127.0.0.1:8080/source.php -o index.html
 
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"

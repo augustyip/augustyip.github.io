@@ -152,8 +152,8 @@ return [
     ],
     [
       'icon' => 'bi-at',
-      'href' => 'mailto:august@august.hk',
-      'text' => 'august@august.hk',
+      'href' => 'mailto:info@august.hk',
+      'text' => 'info@august.hk',
     ],
     [
       'icon' => 'bi-telephone',

@@ -2,7 +2,8 @@
 
 return [
 
-  'name' => 'August Technologies xx',
+  'name' => 'August Technologies',
+  'slogan' => 'Cloud Solution for Your Business',
   'sections' => [
     [
       'id' => 'services',

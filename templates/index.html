@@ -1,14 +1,14 @@
 {{ include('header.html') }}
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand " href="/"><h1>{{ name }}</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <!-- <span class="navbar-toggler-icon"></span> -->
           <i class="bi bi-justify display-6"></i>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav align-items-end">
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
@@ -20,7 +20,7 @@
               <a class="nav-link dropdown-toggle " href="#services" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
-              <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+              <ul class="dropdown-menu dropdown-menu-dark  dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
               {% for s in sections %}
                 <li><a class="dropdown-item " href="#{{ s.id }}">{{ s.title }}</a></li>
               {% endfor %}
@@ -38,7 +38,7 @@
 
     <!-- Hero Area Start -->
     <div class="bg-dark text-secondary px-4 py-5 mt-5 text-center">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 col-sm-12">
             <div class="contents text-center">
@@ -101,20 +101,20 @@
   <!-- Feature Section End -->
 
   {% for s in sections %}
-  <section id="{{ s.id }}" class="container-fluid p-3 {% if s.bg != 'dark' %} bg-light text-dark {% endif %}">
+  <section id="{{ s.id }}" class="container-fluid py-3 {% if s.bg != 'dark' %} bg-light text-dark {% endif %}">
     <div class="container">
       <div class="text-justify">
-        <h4 class="text-center mb-4">{{ s.title }}</h4>
+        <h4 class="text-center mb-3">{{ s.title }}</h4>
         {% for p in s.desc %}
           <p class="text-justify">{{ p }}</p>
         {% endfor %}
       </div>
 
-      <div class="list-group px-5">
+      <div class="list-group ">
       {% for l in s.list %}
-        <div class="list-group-item mb-3 p-4 {% if s.bg != 'dark' %} bg-dark text-white {% endif %}">
-          <h5 class="mb-3 text-uppercase display-6 "><i class="bi {{ l.icon }} me-3 text-center"></i>{{ l.title }}</h5>
-          <p class="mb-1">{{ l.text }}</p>
+        <div class="list-group-item py-3 mb-3 {% if s.bg != 'dark' %} bg-dark text-white {% endif %}">
+          <h5 class="text-uppercase display-6 "><i class="bi {{ l.icon }} me-3 text-center"></i>{{ l.title }}</h5>
+          <p class="">{{ l.text }}</p>
         </div>
       {% endfor %}
       </div>
